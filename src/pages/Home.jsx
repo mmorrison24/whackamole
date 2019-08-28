@@ -1,5 +1,5 @@
 import React, {useState, useRef, useEffect} from "react";
-import {Form, Input, Label, FormGroup, Button, Alert} from "reactstrap";
+import {Label, Button, Alert} from "reactstrap";
 import {Redirect} from "react-router-dom";
 
 import {auth, firestore} from "../firebase/firebase";

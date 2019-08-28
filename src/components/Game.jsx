@@ -4,12 +4,12 @@ import "./game.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDiceD20,faAngleDoubleLeft,faAngleDoubleDown, faAngleDoubleRight, faArrowsAltH, faDotCircle} from '@fortawesome/free-solid-svg-icons'
 
-const numCols = 10
+const numCols = 6
 const numRows = 1
 const symbols = [faDiceD20, faAngleDoubleLeft, faAngleDoubleDown, faAngleDoubleRight, faArrowsAltH, faDotCircle]
 
 const Mole = ({icon, test}) => {
-	return (<li className={'list-item ' + test} ><FontAwesomeIcon icon={icon}/></li>)
+	return (<li className={'list-item ' + test}><FontAwesomeIcon icon={icon}/></li>)
 }
 
 const Game = () => {
@@ -23,6 +23,7 @@ const Game = () => {
 			<ul>
 				{moles}
 			</ul>
+
 		</div>
 	);
 }

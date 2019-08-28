@@ -24,15 +24,18 @@ ul {
      background: #ff6e42;
      color: #fffcfb;
      transform: translate(.9em, -.9em);
-     transition: all .25s linear;
      box-shadow: -2em 2em 0 #e1e1e1;
 }
 
+
 .list-item:hover:before,
 .list-item:hover:after {
-     transition: all .25s linear;
+    transition: all .25s linear;
 }
-
+.list-item.peaked:hover {
+    background: #42D3FF;
+    transform: translate(.5em, -.5em);
+}
 
 .list-item:hover:after {
      background: none;
