@@ -4,6 +4,7 @@ import {Redirect} from "react-router-dom";
 
 import {auth, firestore} from "../firebase/firebase";
 import { Container, Row, Col } from 'reactstrap';
+import Game from "../components/Game";
 
 const Home = ({user}) => {
 
@@ -59,7 +60,7 @@ const Home = ({user}) => {
 			</div>
 			<Row>
 				<Col>
-
+					<Game/>
 				</Col>
 			</Row>
 		</Container>
