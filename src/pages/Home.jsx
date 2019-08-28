@@ -3,6 +3,7 @@ import {Form, Input, Label, FormGroup, Button, Alert} from "reactstrap";
 import {Redirect} from "react-router-dom";
 
 import {auth, firestore} from "../firebase/firebase";
+import { Container, Row, Col } from 'reactstrap';
 
 const Home = ({user}) => {
 
@@ -42,8 +43,9 @@ const Home = ({user}) => {
 	if (loading) return null;
 
 	return (
-		<div className="main">
 
+
+		<Container  className="main">
 			<div className="logout-btn">
 				<Button color="danger" onClick={() => auth.signOut()}>
 					logout
@@ -52,24 +54,15 @@ const Home = ({user}) => {
 
 			{showAlert && <Alert color="success">Score Updated !</Alert>}
 
-			<Form className="w-25 bg-light p-4 border shadow" onSubmit={onSubmit}>
-				<FormGroup>
-					<Label>Welcome {data.name}</Label>
-				</FormGroup>
-				<FormGroup>
-					<Label>score</Label>
-					<Input
-						type="text"
-						defaultValue={data.score}
-						innerRef={scoreRef}
-						required
-					/>
-				</FormGroup>
-				<FormGroup>
-					<Button color="primary">Update Score</Button>
-				</FormGroup>
-			</Form>
-		</div>
+			<div children={'col-12'}>
+				<Label>Welcome {data.name}</Label>
+			</div>
+			<Row>
+				<Col>
+
+				</Col>
+			</Row>
+		</Container>
 	);
 }
 
