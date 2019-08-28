@@ -56,9 +56,9 @@ const Home = ({user}) => {
 			{showAlert && <Alert color="success">Score Updated !</Alert>}
 
 			<div children={'col-12'}>
-				<Label>Welcome {data.name}</Label>
+				<Label><h1>Whack :: {data.name}</h1></Label>
 			</div>
-			<Row>
+			<Row className="mt-5">
 				<Col>
 					<Game/>
 				</Col>

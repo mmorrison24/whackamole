@@ -20,7 +20,7 @@ ul {
     transition: all .25s linear;
 }
 
-.list-item:hover {
+.list-item:hover, .list-item.peaked {
      background: #ff6e42;
      color: #fffcfb;
      transform: translate(.9em, -.9em);
@@ -33,12 +33,6 @@ ul {
      transition: all .25s linear;
 }
 
-.list-item:hover:before {
-     background: #b65234;
-     width: 1em;
-     top: .5em;
-     left: -1em;
- }
 
 .list-item:hover:after {
      background: none;
@@ -56,20 +50,5 @@ ul {
      transition: all .25s linear;
      width: .5em;
  }
-
-.list-item:after {
-     height: 0em;/*4em;*/
-     background: #181818;
-     bottom: -2.25em;
-     left: 1.5em;
-     transform: rotate(90deg) skew(0,45deg);
- }
-
-.list-item:before {
-     height: 0;/* 2.5em;*/
-     background: #121212;
-     top: .25em;
-     left: -.5em;
-     transform: skewY(-45deg);
- }
+/**/
 

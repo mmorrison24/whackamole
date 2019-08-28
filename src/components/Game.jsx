@@ -2,31 +2,26 @@ import React from "react";
 import "./game.css"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAngleRight,faAngleDoubleLeft,faAngleDoubleDown, faAngleDoubleRight, faArrowsAltH, faDotCircle} from '@fortawesome/free-solid-svg-icons'
+import { faDiceD20,faAngleDoubleLeft,faAngleDoubleDown, faAngleDoubleRight, faArrowsAltH, faDotCircle} from '@fortawesome/free-solid-svg-icons'
 
 const numCols = 10
-const symbols = [faAngleRight, faAngleDoubleLeft, faAngleDoubleDown, faAngleDoubleRight, faArrowsAltH, faDotCircle]
+const numRows = 1
+const symbols = [faDiceD20, faAngleDoubleLeft, faAngleDoubleDown, faAngleDoubleRight, faArrowsAltH, faDotCircle]
 
-const Mole = ({icon}) => {
-	return (<li className={'list-item'} ><FontAwesomeIcon icon={icon}/></li>)
+const Mole = ({icon, test}) => {
+	return (<li className={'list-item ' + test} ><FontAwesomeIcon icon={icon}/></li>)
 }
 
 const Game = () => {
+	const select = () => (Math.floor(Math.random() * (numCols * numRows)));
+	const selected = select();
+	const moles = symbols.map((item, i ) =>  <Mole icon={item} key={i} test={ (selected === i) ? "peaked" : "hiding" }/>);
 
-	const items = symbols.map((item, i ) =>  <Mole icon={item} key={i}/>);
 
 	return (
 		<div className="stage d-flex">
 			<ul>
-				{items}
-			</ul>
-
-			<ul>
-				{items}
-			</ul>
-
-			<ul>
-				{items}
+				{moles}
 			</ul>
 		</div>
 	);
